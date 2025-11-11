@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Narmanlı_Mobilya</title>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <!--! header section start  -->
+    <header class="header">
+      <!-- <a href="#" class="logo">
+        <img src="resimler/cınar.JPG" alt="logo" />
+      </a> -->
+      <nav class="navbar">
+        <a href="index.html" class="active">Anasayfa</a>
+        <a href="Hakkımızda.html">Hakkımızda</a>
+        <a href="menu.html">Menü</a>
+            <a href="products.html">Ürünler</a>
+        <a href="review.html">Yorumlar</a>
+        <a href="contact.html">İletişim</a>
+        <a href="blogs.html">Bloglar</a>
+      </nav>
+
+      <div class="buttons">
+        <button id="search-btn">
+          <i class="fas fa-search"></i>
+        </button>
+        <button id="cart-btn">
+          <i class="fas fa-shopping-cart"></i>
+          <span id="cart-count">0</span> <!-- Sepetteki ürün sayısı -->
+        </button>
+        <button id="menu-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      
+      <div class="search-form">
+        <input
+          type="text"
+          class="search-input"
+          id="search-box"
+          placeholder="search here"
+        />
+        <i class="fas fa-search"></i>
+      </div>
+
+      <div class="cart-items-container">
+        <div class="cart-item">
+          <i class="fas fa-times"></i>
+          <img src="resimler/mutfak_1.jpg" alt="menu" />
+          <div class="content">
+            <h3>cart item 01</h3>
+            <div class="price">39.000₺/-</div>
+          </div>
+        </div>
+        <div class="cart-item">
+          <i class="fas fa-times"></i>
+          <img src="resimler/mutfak_2.jpg" alt="menu" />
+          <div class="content">
+            <h3>cart item 02</h3>
+            <div class="price">57.000₺/-</div>
+          </div>
+        </div>
+        <div class="cart-item">
+          <i class="fas fa-times"></i>
+          <img src="resimler/mutfak_3.jpg" alt="menu" />
+          <div class="content">
+            <h3>cart item 03</h3>
+            <div class="price">33.000₺/-</div>
+          </div>
+        </div>
+        <div class="cart-item">
+          <i class="fas fa-times"></i>
+          <img src="resimler/mutfak_4.jpg" alt="menu" />
+          <div class="content">
+            <h3>cart item 04</h3>
+            <div class="price">37.000₺/-</div>
+          </div>
+        </div>
+        <a href="#" class="btn">checkout now</a>
+      </div>
+    </header>
+    <!--! header section end  -->
+
+    <!--! home section start  -->
+    <section class="home">
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="resimler/0.50-minyatür-insanlar.mp4" type="video/mp4">
+    Tarayıcınız bu videoyu desteklemiyor.
+  </video>
+    </section>
+    <!--! home section end  -->
+    <!-- Öne Çıkan Özellikler -->
+<section class="features">
+  <div class="features-header">
+    <h2>Öne Çıkan Özellikler</h2>
+    <p>
+      Modern yaşamın ihtiyaçlarına uygun tasarlanmış mobilyalarımız, 
+      en son teknoloji ve yüksek kalite malzemelerle üretilmektedir.
+    </p>
+  </div>
+
+  <div class="features-grid">
+    <div class="feature-box">
+      <i class="fa-solid fa-screwdriver-wrench"></i>
+      <h3>Premium Malzemeler</h3>
+      <p>Mat dokulu ahşap yüzeyler ve paslanmaz çelik detaylarla premium kalite.</p>
+    </div>
+
+    <div class="feature-box">
+      <i class="fas fa-door-closed"></i>
+      <h3>Soft-Close Sistem</h3>
+      <p>Yumuşak kapanma özellikli çekmece ve kapak sistemleri.</p>
+    </div>
+
+    <div class="feature-box">
+      <i class="fa-solid fa-ruler-combined"></i>
+      <h3>Modüler Tasarım</h3>
+      <p>Her alana uyum sağlayan özelleştirilebilir modüler yapı.</p>
+    </div>
+  </div>
+</section>
+
+    <!--! menu section start  -->
+  <section class="menu" id="menu">
+  <h1 class="heading">EV VE YAŞAM KOLEKSİYONLARIMIZ</h1>
+  <p>
+    Evinizin her alanına uygun mobilya çözümlerimizi keşfedin. 
+    Modern mutfaklardan şık banyolara, kitaplıklardan gardroplara kadar geniş koleksiyonumuzla yanınızdayız.
+  </p>
+
+  <div class="box-container">
+    <div class="box">
+      <div class="box-head">
+        <img src="resimler/mutfak_1.jpg" alt="mutfak koleksiyonu" />
+        <span class="menu-category">MUTFAK</span>
+        <h3>ANTRASİT</h3>
+        <a href="mutfak.html" class="btn">İncele</a>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="box-head">
+        <img src="resimler/mutfak_2.jpg" alt="mutfak koleksiyonu" />
+        <span class="menu-category">MUTFAK</span>
+        <h3>IŞILTILI</h3>
+        <a href="mutfak.html" class="btn">İncele</a>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="box-head">
+        <img src="resimler/mutfak_3.jpg" alt="mutfak koleksiyonu" />
+        <span class="menu-category">MUTFAK</span>
+        <h3>ADA</h3>
+        <a href="mutfak.html" class="btn">İncele</a>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="box-head">
+        <img src="resimler/mutfak_4.jpg" alt="mutfak koleksiyonu" />
+        <span class="menu-category">MUTFAK</span>
+        <h3>FERAH</h3>
+        <a href="mutfak.html" class="btn">İncele</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!--! menu section end  -->
+
+    <!--! products section start  -->
+    <section class="products" id="products">
+      <h1 class="heading"><span>Ürünlerimiz</span></h1>
+      <div class="box-container">
+        <div class="box">
+          <div class="box-head">
+            <span class="title"></span>
+            <a href="#" class="name">BANYO DOLABI</a>
+          </div>
+          <div class="image">
+            <img src="resimler/banyo_1.jpg" alt="" />
+          </div>
+          <div class="box-bottom">
+            <div class="info">
+              <b class="price">20.000₺</b>
+            </div>
+            <div class="product-btn">
+              <a href="#" class="btn" data-name="BANYO DOLABI" data-price="20.000₺" data-image="resimler/banyo_1.jpg">
+                <i class="fas fa-plus"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-head">
+            <span class="title"></span>
+            <a href="#" class="name">VESTİYER</a>
+          </div>
+          <div class="image">
+            <img src="resimler/vestiyer.jpg" alt="" />
+          </div>
+          <div class="box-bottom">
+            <div class="info">
+              <b class="price">12.000₺</b>
+            </div>
+            <div class="product-btn">
+              <a href="#" class="btn" data-name="VESTİYER" data-price="12.000₺" data-image="resimler/vestiyer.jpg">
+                <i class="fas fa-plus"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="box dark-bg">
+          <div class="box-head">
+            <span class="title"></span>
+            <a href="#" class="name">KİTAPLIK</a>
+          </div>
+          <div class="image">
+            <img src="resimler/kitaplık.jpg" alt="" />
+          </div>
+          <div class="box-bottom">
+            <div class="info">
+              <b class="price">23.000₺</b>
+            </div>
+            <div class="product-btn">
+              <a href="#" class="btn" data-name="KİTAPLIK" data-price="23.000₺" data-image="resimler/kitaplık.jpg">
+                <i class="fas fa-plus"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!--! products section end  -->
+
+    <!--! about section start  -->
+    <section class="about" id="about">
+      <h1 class="heading"><span>Hakkımızda</span></h1>
+      <div class="row">
+        <div class="image">
+          <img src="resimler/about.JPG" alt="about" />
+        </div>
+        <div class="content">
+          <h3>Mükemmelliği Tasarımlarımızda Bulun!</h3>
+          <p>
+            Narmanlı Mobilya, 2000 yılından bu yana sektördeki tecrübesi ve kaliteli işçilik anlayışıyla mobilya üretiminde öncü bir markadır. 
+            Misyonumuz, müşterilerimizin ihtiyaçlarına en uygun tasarımları sunarak, yaşam alanlarını estetik ve fonksiyonellikle buluşturmaktır.
+          </p>
+          <p>
+         Ürünlerimizde kullanılan yüksek kaliteli malzemeler, uzun ömürlü ve çevre dostu çözümler sunmamıza olanak tanımaktadır.
+          </p>
+          <p>
+            Narmanlı Mobilya olarak, sadece bir mobilya üreticisi değil, aynı zamanda yaşam alanlarınıza değer katan bir çözüm ortağı olmayı amaçlıyoruz.
+ Yüksek müşteri memnuniyeti anlayışımızla, her projemizde müşteri beklentilerini aşmayı ilke ediniyoruz.
+            <p>Siz de Narmanlı Mobilya ile evinizde veya ofisinizde mükemmel bir değişim yaratmak isterseniz, yenilikçi ve şık tasarımlarımızı keşfetmek için bizimle iletişime geçebilirsiniz.</p>
+
+          </p>
+          <a href="#" class="btn">Daha Fazla Keşfet</a>
+        </div>
+      </div>
+    </section>
+    <!--! about section end  -->
+
+    <!--! review section start  -->
+    <section class="review" id="review">
+      <h1 class="heading">Kullanıcı  <span>Yorumları</span></h1>
+      <div class="box-container">
+        <div class="box">
+          <img src="resimler/quote.png" alt="quote" />
+          <p>
+            Narmanlı Mobilya'dan aldığım oturma odası takımı tam istediğim gibi oldu. 
+            Hem şık hem de çok rahat. 
+            Hem tasarım hem de kalite açısından çok memnun kaldım, kesinlikle tavsiye ederim!
+          </p>
+          <img src="resimler/avatar-1.png" alt="avatar" class="user" />
+          <h3>Elif Sipahi</h3>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+        </div>
+        <div class="box">
+          <img src="resimler/quote.png" alt="quote" />
+          <p>
+            Narmanlı Mobilya'dan mutfak dolapları aldım ve sonuç harika! Hem şık hem de çok kullanışlı. 
+            Kurulum hızlı ve profesyoneldi. Evinize değer katacak kaliteli ürünler sunuyorlar.
+          </p>
+          <img src="resimler/avatar-2.png" alt="avatar" class="user" />
+          <h3>Gökhan Demir</h3>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+        </div>
+        <div class="box">
+          <img src="resimler/quote.png" alt="quote" />
+          <p>
+            Narmanlı Mobilya'dan aldığım yatak odası takımı gerçekten mükemmel. 
+            Hem modern tasarımı hem de kaliteli malzemeleri ile tam hayalimdeki gibi oldu. 
+            Hem kullanım rahatlığı hem de şıklığıyla çok memnun kaldım. Kesinlikle tavsiye ederim!
+          </p>
+          <img src="resimler/avatar-3.png" alt="avatar" class="user" />
+          <h3>Selin Apaçık</h3>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--! review section end  -->
+
+    <!--! contact section start  -->
+    <section class="contact" id="contact">
+      <h1 class="heading">Sorularınız İçİn <span>Bize Ulaşın</span></h1>
+      <div class="row">
+        <iframe
+          class="map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12037.852231349814!2d28.985091699999998!3d41.03700175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab7650656bd63%3A0x8ca058b28c20b6c3!2zVGFrc2ltIE1leWRhbsSxLCBHw7xtw7zFn3N1eXUsIDM0NDM1IEJleW_En2x1L8Swc3RhbmJ1bA!5e0!3m2!1str!2str!4v1652655842555!5m2!1str!2str"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+        <form>
+          <h3>Bİze yazın</h3>
+          <div class="inputBox">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="İsim" />
+          </div>
+          <div class="inputBox">
+            <i class="fas fa-envelope"></i>
+            <input type="email" placeholder="E-mail" />
+          </div>
+          <div class="inputBox">
+            <i class="fas fa-phone"></i>
+            <input type="number" placeholder="Telefon Numarası" />
+          </div>
+          <input type="submit" class="btn" value="Hemen İletişime Geçin" />
+        </form>
+      </div>
+    </section>
+    <!--! contact section end  -->
+
+    <!--! blogs section start  -->
+    <section class="blogs" id="blogs">
+      <h1 class="heading">İlham<span> Veren Yazılar</span></h1>
+      <div class="box-container">
+        <div class="box">
+          <div class="image">
+            <img src="resimler/blog_1.jpg" alt="blog" />
+          </div>
+          <div class="content">
+            <a href="#" class="title">Mutfak Kapaklarıyla Şıklık ve Fonksiyonellik Nasıl Sağlanır?</a>
+            <span>by admin / 23st may, 2019</span>
+            <p>
+                Mutfak mobilyası kapakları, hem estetik hem de fonksiyonellik açısından mutfak tasarımının en önemli unsurlarından biridir.
+                 Doğru malzeme ve tasarım seçimiyle, mutfağınızda şıklığı ve düzeni bir arada yakalayabilirsiniz.
+            </p>
+            <a href="#" class="btn">Devamını Oku</a>
+          </div>
+        </div>
+        <div class="box">
+          <div class="image">
+            <img src="resimler/blog_2.jpg" alt="blog" />
+          </div>
+          <div class="content">
+            <a href="#" class="title">Komodin Seçiminde Nelere Dikkat Edilmeli?</a>
+            <span>by admin / 10st July, 2021</span>
+            <p>
+                Komodin seçerken, hem estetik hem de fonksiyonelliği göz önünde bulundurmak önemlidir.
+                 Doğru boyut, odanızın havasını değiştirebilir ve ihtiyacınıza göre çekmece veya raf gibi ek depolama alanları sunarak düzeni sağlar.
+              
+            </p>
+            <a href="#" class="btn">Devamını Oku</a>
+          </div>
+        </div>
+        <div class="box">
+          <div class="image">
+            <img src="resimler/blog_3.jpg" alt="blog" />
+          </div>
+          <div class="content">
+            <a href="#" class="title">Banyo Dolabı Seçerken Nelere Dikkat Edilmeli?</a>
+            <span>by admin / 02st Jan, 2024</span>
+            <p>
+                Banyo dolabı seçerken, suya dayanıklı malzemeler tercih etmek uzun ömürlü kullanım sağlar. 
+                Ayrıca, alanı verimli kullanabilmek için kompakt tasarımlar ve raf ya da çekmece gibi depolama çözümleri önemlidir. 
+                Banyo dolabınızın rengi ve tarzı, banyonuzun genel dekorasyonu ile uyumlu olmalı, aynı zamanda işlevsel bir alan yaratmalıdır.
+            </p>
+            <a href="#" class="btn">Devamını Oku</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--! blogs section end  -->
+
+    <!--! footer section start  -->
+    <section class="footer">
+      <div class="search">
+        <input type="text" class="search-input" placeholder="Search" />
+        <button class="btn btn-primary">search</button>
+      </div>
+      <div class="share">
+        <a href="#" class="fab fa-facebook"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+        <a href="#" class="fab fa-pinterest"></a>
+      </div>
+
+      <div class="links">
+        <a href="#" class="active">Anasayfa</a>
+        <a href="#">Hakkımızda</a>
+        <a href="#">Menü</a>
+        <a href="#">Ürünler</a>
+        <a href="#">Yorumlar</a>
+        <a href="#">İletişim</a>
+        <a href="#">Bloglar</a>
+      </div>
+
+      <div class="credit">
+        <span>Begüm Narmanlı tarafından tasarlanmıştır.</span> | Tüm Hakları Saklıdır.
+      </div>
+    </section>
+    <!--! footer section end  -->
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
