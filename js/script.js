@@ -1,166 +1,128 @@
-// Sepeti yükle
-window.onload = function() {
-  loadCart();
-};
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // =======================================================
+    // 1. YUKARI DÖN BUTONU İŞLEVİ (Renk Değişimi ve Scroll)
+    // =======================================================
+    const backToTopBtn = document.getElementById("backToTop");
+    const sections = document.querySelectorAll("section");
 
-// Sepeti LocalStorage'dan al veya boş bir dizi oluştur
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    if (backToTopBtn) {
+        window.addEventListener("scroll", () => {
+            // Buton görünürlüğü
+            if (window.scrollY > 300) {
+                backToTopBtn.style.display = "flex";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
 
-// 'Sepete Ekle' butonlarına tıklama
-const addToCartButtons = document.querySelectorAll('.btn');
+            // Section'a göre renk değiştirme
+            const scrollPos = window.scrollY + window.innerHeight / 2;
 
-addToCartButtons.forEach((button) => {
-  button.addEventListener('click', function(event) {
-    event.preventDefault(); // Sayfanın yenilenmesini engelle
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const colorMode = section.dataset.scrollColor; // HTML'deki data-scroll-color değeri
 
-    let productName, productPrice, productImage;
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    if (colorMode === "dark") {
+                        backToTopBtn.style.backgroundColor = "#f5f5dc"; // krem
+                        backToTopBtn.style.color = "#800000"; // bordo ikon
+                    } else {
+                        backToTopBtn.style.backgroundColor = "#800000"; // bordo
+                        backToTopBtn.style.color = "#f5f5dc"; // krem ikon
+                    }
+                }
+            });
+        });
 
-    // Menü kısmındaki ürünler için veri çekme
-    if (button.closest('.menu')) {
-      const productBox = button.closest('.box');
-      productName = productBox.querySelector('h3').textContent;
-      productPrice = productBox.querySelector('.price').textContent.trim().split(' ')[0];  // Fiyatı sadece sayısal kısım
-      productImage = productBox.querySelector('img').src;
+        // Tıklama ile sayfanın en üstüne gitme
+        backToTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
     }
 
-    // Ürünler kısmındaki ürünler için veri çekme
-    else if (button.closest('.products')) {
-      productName = button.getAttribute('data-name');
-      productPrice = button.getAttribute('data-price');
-      productImage = button.getAttribute('data-image');
+    // =======================================================
+    // 2. TELEFON NUMARASI SADECE RAKAM GİRİŞİ İŞLEVİ
+    // =======================================================
+    const phoneInput = document.querySelector('input[placeholder="Telefon Numarası"]');
+
+    if (phoneInput) {
+        // Klavyeden giriş kontrolü (harf basılmasını engeller)
+        phoneInput.addEventListener("keydown", (event) => {
+            const allowedKeys = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "Backspace", "Delete", "Tab", "ArrowLeft", "ArrowRight"];
+            const isNumber = (event.key >= "0" && event.key <= "9") || event.key.startsWith("Numpad");
+
+            if (!allowedKeys.includes(event.key) && !isNumber && !(event.ctrlKey || event.metaKey)) {
+                event.preventDefault();
+            }
+        });
+
+        // Yapıştırma veya diğer girişler sonrası sadece rakam bırakma
+        phoneInput.addEventListener("input", () => {
+            phoneInput.value = phoneInput.value.replace(/[^0-9]/g, "");
+        });
     }
+    
+    // =======================================================
+    // 3. BLOG SECTION DEVAMINI OKU (Tekil Açık Kalma) İŞLEVİ
+    // =======================================================
+    const blogButtons = document.querySelectorAll('.blog-btn');
+    
+    blogButtons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            event.preventDefault(); 
+            
+            const contentDiv = button.closest('.content');
+            const paragraph = contentDiv.querySelector('p');
+            
+            if (!paragraph) return; 
 
-    if (!productName || !productPrice || !productImage) {
-      console.error('Ürün bilgileri eksik!');
-      return;
-    }
+            // Tıklananın şu an açık olup olmadığını kontrol et
+            const isCurrentlyExpanded = paragraph.classList.contains('expanded');
 
-    // Benzersiz ID oluşturma (isim + fiyat + resim)
-    const productId = productName + productPrice + productImage;
-
-    // Aynı üründen var mı kontrol et
-    const existingProduct = cart.find(item => item.id === productId);
-
-    if (existingProduct) {
-      // Eğer ürün varsa, miktarını arttır
-      existingProduct.quantity++;
-    } else {
-      // Yeni ürün ekle
-      const product = {
-        id: productId,
-        name: productName,
-        price: productPrice,
-        image: productImage,
-        quantity: 1 // Başlangıçta 1
-      };
-      cart.push(product);
-    }
-
-    localStorage.setItem('cart', JSON.stringify(cart));
-
-    alert(`${productName} sepete eklendi!`);
-    loadCart();
-  });
-});
-
-function loadCart() {
-  const cart = JSON.parse(localStorage.getItem('cart')) || [];
-  console.log('Sepet:', cart);
-  const cartCount = document.getElementById('cart-count');
-  if (cartCount) {
-    cartCount.innerText = cart.length;  // Sepet sayısını doğru şekilde güncelle
-  }
-
-  const cartContainer = document.querySelector('.cart-items-container');
-  cartContainer.innerHTML = ''; // Önce sepeti temizle
-
-  let total = 0; // Toplam tutar için değişken
-
-  cart.forEach(item => {
-    const cartItem = document.createElement('div');
-    cartItem.classList.add('cart-item');
-    cartItem.innerHTML = `
-      <img src="${item.image}" alt="${item.name}" style="width:50px; height:50px; object-fit:cover; border-radius:8px;">
-      <p>${item.name} - ${item.price}</p>
-      <p>Adet: ${item.quantity}</p>
-      <button class="increase-btn">+</button>
-      <button class="decrease-btn">-</button>
-      <button class="remove-btn">Kaldır</button>
-    `;
-
-    // Artırma butonuna tıklama
-    cartItem.querySelector('.increase-btn').addEventListener('click', function(event) {
-      event.stopPropagation(); // Sepetin kapanmasını engelle
-      increaseQuantity(item.id);
+            // --- 3a. TÜM Açık Olanları Kapat ---
+            document.querySelectorAll('.blogs .box-container .box .content p.expanded').forEach(p => {
+                p.classList.remove('expanded');
+            });
+            
+            // --- 3b. TÜM Buton Metinlerini "Devamını Oku" Yap ---
+            document.querySelectorAll('.blog-btn').forEach(btn => {
+                btn.textContent = 'Devamını Oku';
+            });
+            
+            // --- 3c. Eğer KAPALI ise, Şimdi Aç ---
+            if (!isCurrentlyExpanded) {
+                paragraph.classList.add('expanded');
+                button.textContent = 'Daha Az Oku';
+            }
+            // Eğer Başlangıçta AÇIK ise, sadece yukarıdaki kapatma adımları çalışır.
+        });
     });
 
-    // Azaltma butonuna tıklama
-    cartItem.querySelector('.decrease-btn').addEventListener('click', function(event) {
-      event.stopPropagation(); // Sepetin kapanmasını engelle
-      decreaseQuantity(item.id);
+    // =======================================================
+    // 4. BLOG YAZISINI BOŞLUĞA TIKLAYINCA KAPATMA İŞLEVİ
+    // =======================================================
+    document.addEventListener('click', (event) => {
+        // Tıklanan öğenin, bir blog kutusunun (içinde Devamını Oku butonu dahil) içinde olup olmadığını kontrol et
+        const isClickInsideBlogBox = event.target.closest('.blogs .box-container .box');
+        
+        // Eğer tıklama, *herhangi bir* blog kutusunun içinde DEĞİLSE
+        if (!isClickInsideBlogBox) {
+            
+            const allExpandedParagraphs = document.querySelectorAll('.blogs .box-container .box .content p.expanded');
+            
+            if (allExpandedParagraphs.length > 0) {
+                // Hepsini kapat
+                allExpandedParagraphs.forEach(p => {
+                    p.classList.remove('expanded');
+                });
+                
+                // Tüm buton metinlerini varsayılana döndür
+                document.querySelectorAll('.blog-btn').forEach(btn => {
+                    btn.textContent = 'Devamını Oku';
+                });
+            }
+        }
     });
 
-    // Ürünü sepetten kaldırma
-    cartItem.querySelector('.remove-btn').addEventListener('click', function(event) {
-      event.stopPropagation(); // Sepetin kapanmasını engelle
-      removeFromCart(item.id);
-    });
-
-    cartContainer.appendChild(cartItem);
-
-    // Toplam tutarı hesapla
-    total += parseFloat(item.price.replace("₺", "").trim()) * item.quantity;
-  });
-
-  // Sepet alt kısmına toplam tutarı yazdır
-  const totalPriceElement = document.createElement('div');
-  totalPriceElement.classList.add('total-price');
-  totalPriceElement.innerHTML = `
-    <p>Toplam Tutar: ₺${total.toFixed(2)}</p>
-  `;
-  cartContainer.appendChild(totalPriceElement);
-}
-
-// Artırma fonksiyonu
-function increaseQuantity(productId) {
-  const product = cart.find(item => item.id === productId);
-  if (product) {
-    product.quantity++;
-    localStorage.setItem('cart', JSON.stringify(cart));
-    loadCart();
-  }
-}
-
-// Azaltma fonksiyonu
-function decreaseQuantity(productId) {
-  const product = cart.find(item => item.id === productId);
-  if (product && product.quantity > 1) {
-    product.quantity--;
-    localStorage.setItem('cart', JSON.stringify(cart));
-    loadCart();
-  }
-}
-
-// Sepetten ürün çıkarma
-function removeFromCart(productId) {
-  cart = cart.filter(item => item.id !== productId);
-  localStorage.setItem('cart', JSON.stringify(cart));
-  loadCart();
-}
-
-// Sepet butonuna tıklama işlemi
-const cartBtn = document.querySelector("#cart-btn");
-const cartItem = document.querySelector(".cart-items-container");
-
-// Sepeti açma ve kapama işlemi
-cartBtn.addEventListener("click", function (event) {
-  event.stopPropagation();  // Butona tıklandığında sepetin kapanmamasını sağlar
-  cartItem.classList.toggle("active");  // Sepeti aç / kapa
-});
-
-// Sayfa içindeki diğer yerlere tıklanınca sepetin kapanması
-document.addEventListener("click", function (event) {
-  if (!cartItem.contains(event.target) && !cartBtn.contains(event.target)) {
-    cartItem.classList.remove("active");  // Sepeti kapat
-  }
-});
+}); // DOMContentLoaded kapanışı
