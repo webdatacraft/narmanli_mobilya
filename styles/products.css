@@ -1,0 +1,168 @@
+/* --- PRODUCT SECTION GENEL AYARLARI --- */
+.products {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.products[data-scroll-color="dark"] {
+  background-color: var(--main-color);
+  color: var(--black-color);
+}
+
+.products[data-scroll-color="light"] {
+  background-color: var(--black-color);
+  color: var(--main-color);
+}
+
+.products[data-scroll-color="light"] .product-list li::before {
+  color: var(--main-color);
+}
+
+/* --- PRODUCT BOX --- */
+.product-box-container {
+  width: 100%;
+  max-width: 140rem;
+}
+
+.box-product-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 5rem;
+  padding: 4rem 0;
+}
+
+/* --- RESİM ALANI --- */
+.box-product-item .image {
+  flex: 1 1 50%;
+  max-width: 60rem;
+}
+
+.box-product-item .image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.4);
+}
+
+/* --- METİN/BİLGİ ALANI --- */
+.product-box-bottom {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 30rem;
+  padding-top: 2rem;
+}
+
+.product-title {
+  font-size: 3.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  color: inherit;
+}
+
+.product-list {
+  margin-bottom: 3rem;
+  padding-left: 0;
+  list-style: none;
+}
+
+.product-list li {
+  font-size: 1.6rem;
+  line-height: 2.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-left: 2.5rem;
+  color: inherit;
+}
+
+/* List Item İkonu */
+.product-list li::before {
+  content: "\f00c"; /* Tik İkonu */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  font-size: 1.8rem;
+  color: var(--black-color);
+}
+
+/* Detaylı Bilgi Butonu Stili */
+.products-whatsapp-btn {
+  background-color: var(--main-color);
+  color: var(--black-color);
+  padding: 0.3rem 1.5rem;
+  border-radius: 1rem;
+  border-bottom: none;
+  transform: translateY(0);
+  transition: all 0.2s ease-in;
+}
+
+/* --- PRODUCT FOOTER STİLİ --- */
+.product-footer {
+  padding: 1rem 0;
+  text-align: center;
+  background-color: var(--black-color);
+  color: var(--main-color);
+}
+
+.product-credit {
+  font-size: 2rem;
+  color: var(--main-color);
+  font-weight: 300;
+  padding-top: 1.5rem;
+}
+
+.product-credit span {
+  font-weight: bold;
+  color: var(--main-color);
+}
+
+/* --- DETAYLI BİLGİ ALIN BUTONU --- */
+
+.product-info-btn {
+  font-size: 1.6rem;
+  padding: 1rem 3rem;
+  border-radius: 1rem;
+  font-weight: bold;
+  align-self: flex-start;
+  transition: all 0.3s ease;
+}
+
+.products[data-scroll-color="dark"] .product-info-btn {
+  background-color: var(--black-color);
+  color: var(--main-color);
+}
+
+.products[data-scroll-color="light"] .product-info-btn {
+  background-color: var(--main-color);
+  color: var(--black-color);
+}
+
+/* --- RESPONSIVE TASARIM --- */
+@media (max-width: 991px) {
+  /* Tabletlerde ve küçük ekranlarda */
+  .product-box-container {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Mobil cihazlarda resmi ve metni alt alta getir */
+  .box-product-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .box-product-item .image {
+    max-width: 100%;
+  }
+  .product-info-btn {
+    align-self: center;
+  }
+}
