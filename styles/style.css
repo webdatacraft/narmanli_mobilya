@@ -14,7 +14,6 @@
   outline: none;
   border: none;
   text-decoration: none;
-  text-transform: capitalize;
   transition: 0.2s ease;
 }
 
@@ -138,11 +137,14 @@ a {
 .dropdown-content {
   display: none;
   position: absolute;
-  min-width: 100px;
+  min-width: max-content;
   background-color: var(--black-color);
   border-radius: 8px;
   z-index: 10;
   list-style-type: none;
+  text-align: center;
+  left: 0;
+  transform: translateX(-30px);
 }
 
 /* Menüdeki bağlantılar */
@@ -192,7 +194,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 7%;
+  padding: 0.3rem 5%;
   margin: 0;
   border-radius: 0;
   position: sticky;
@@ -212,11 +214,16 @@ a {
   border-bottom: 0.1rem solid transparent;
   text-decoration: none;
   transition: transform 0.3s ease-out, color 0.3s linear;
+  margin-right: 44px;
+}
+
+.header .logo {
+  margin-right: 50px;
 }
 
 .header .logo img {
-  width: 200px;
-  height: auto;
+  width: 180px;
+  height: 90px;
 }
 
 /* Teklif Alın Butonu */
@@ -701,24 +708,6 @@ a {
 /*! footer end  */
 
 /*! responsive start  */
-@media (max-width: 991px) {
-  html {
-    font-size: 55%;
-  }
-
-  .header {
-    padding: 1.5rem 2rem;
-  }
-
-  section {
-    padding: 2rem;
-  }
-
-  .products .box-container .box .box-head .name {
-    font-size: 3.4rem;
-  }
-}
-
 @media (max-width: 768px) {
   .header #menu-btn {
     display: inline-block;

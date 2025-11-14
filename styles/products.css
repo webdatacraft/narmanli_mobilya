@@ -60,9 +60,9 @@
 .product-title {
   font-size: 3.5rem;
   font-weight: 600;
-  margin-bottom: 2rem;
   text-transform: uppercase;
   color: inherit;
+  text-align: center;
 }
 
 .product-list {
@@ -141,6 +141,370 @@
 .products[data-scroll-color="light"] .product-info-btn {
   background-color: var(--main-color);
   color: var(--black-color);
+}
+
+/* ======================================================= */
+/* YALNIZCA #Hakkımızda STİLLERİ*/
+/* ======================================================= */
+#Hakkımızda .box-product-item {
+    display: flex; 
+    flex-wrap: nowrap; 
+    align-items: flex-start; 
+}
+
+/* 2. GÖRSEL GRUBU */
+#Hakkımızda .image-group {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 50px;
+}
+
+/* 3. METİN/BİLGİ ALANI */
+#Hakkımızda .product-box-bottom {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: auto; 
+    padding-top: 0; 
+    padding-left: 2rem; 
+}
+
+#Hakkımızda .box-product-item .image {
+    flex: none; 
+    max-width: 100%; 
+    margin-bottom: 0;
+}
+
+/* ======================================================= */
+/* VİZYON Stilleri */
+/* ======================================================= */
+
+#Vizyon .box-product-item {
+    display: flex; 
+    flex-wrap: nowrap; 
+    align-items: flex-start; 
+}
+
+/* 2. GÖRSEL GRUBU */
+#Vizyon .image-group {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 50px;
+}
+
+/* 3. METİN/BİLGİ ALANI */
+#Vizyon .product-box-bottom {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: auto; 
+    padding-top: 0; 
+    padding-left: 2rem; 
+}
+
+#Vizyon .box-product-item .image {
+    flex: none; 
+    max-width: 100%; 
+    margin-bottom: 0;
+}
+
+#Vizyon .principles-list {
+    margin-top: 15px;
+    list-style-type: none; 
+    padding-left: 0; 
+}
+
+#Vizyon .principle-item {
+    font-size: 14px;
+    margin-bottom: 27px; 
+    line-height: 1.6;
+    padding-left: 30px;
+    position: relative;
+    color: var(--main-color); 
+}
+
+#Vizyon .principle-item::before {
+    content: "\f00c"; /* Font Awesome tik ikonu */
+    font-family: "Font Awesome 6 Free";
+    color: var(--main-color); 
+    font-weight: 900;
+    display: inline-block;
+    width: 1em;
+    margin-left: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.2em;
+}
+
+#Vizyon .principle-item strong {
+    color: var(--main-color); 
+    font-weight: 700;
+}
+
+/* ======================================================= */
+/* Misyon Stilleri */
+/* ======================================================= */
+
+#misyon .box-product-item {
+    display: flex; 
+    flex-wrap: nowrap; 
+    align-items: flex-start; 
+}
+
+/* 2. GÖRSEL GRUBU */
+#misyon .image-group {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 50px;
+}
+
+/* 3. METİN/BİLGİ ALANI */
+#misyon .product-box-bottom {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: auto; 
+    padding-top: 0; 
+    padding-left: 2rem; 
+}
+
+#misyon .box-product-item .image {
+    flex: none; 
+    max-width: 100%; 
+    margin-bottom: 0;
+}
+
+#misyon .principles-list {
+    margin-top: 15px;
+    list-style-type: none; 
+    padding-left: 0; 
+}
+
+#misyon .principle-item {
+    font-size: 14px;
+    margin-bottom: 40px; 
+    line-height: 1.6;
+    padding-left: 30px;
+    position: relative;
+    color: var(--black-color); 
+}
+
+#misyon .principle-item::before {
+    content: "\f00c"; /* Font Awesome tik ikonu */
+    font-family: "Font Awesome 6 Free";
+    color: var(--black-color); 
+    font-weight: 900;
+    display: inline-block;
+    width: 1em;
+    margin-left: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.2em;
+}
+
+#misyon .principle-item strong {
+    color: var(--black-color); 
+    font-weight: 700;
+}
+
+/* ======================================================= */
+/* Ürün Konseptleri Stilleri */
+/* ======================================================= */
+
+#urun-konseptleri .box-product-item {
+    display: flex; 
+    flex-wrap: nowrap; 
+    align-items: flex-start; 
+}
+
+/* 2. GÖRSEL GRUBU */
+#urun-konseptleri .image-group {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 50px;
+}
+
+/* 3. METİN/BİLGİ ALANI */
+#urun-konseptleri .product-box-bottom {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: auto; 
+    padding-top: 0; 
+    padding-left: 2rem; 
+}
+
+#urun-konseptleri .box-product-item .image {
+    flex: none; 
+    max-width: 100%; 
+    margin-bottom: 0;
+}
+
+#urun-konseptleri .principles-list {
+    margin-top: 15px;
+    list-style-type: none; 
+    padding-left: 0; 
+}
+
+#urun-konseptleri .principle-item {
+    font-size: 14px;
+    margin-bottom: 30px; 
+    line-height: 1.6;
+    padding-left: 30px;
+    position: relative;
+    color: var(--main-color); 
+}
+
+#urun-konseptleri .principle-item::before {
+    content: "\f00c"; /* Font Awesome tik ikonu */
+    font-family: "Font Awesome 6 Free";
+    color: var(--main-color); 
+    font-weight: 900;
+    display: inline-block;
+    width: 1em;
+    margin-left: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.2em;
+}
+
+#urun-konseptleri .principle-item strong {
+    color: var(--main-color); 
+    font-weight: 700;
+}
+.urun {
+    font-size: 14px;
+    line-height: 1.9rem;
+    color: var(--main-color); 
+    margin-top: 15px;
+}
+
+/* ======================================================= */
+/* Ürün Konseptleri Stilleri */
+/* ======================================================= */
+
+#sloganlar .box-product-item {
+    display: flex; 
+    flex-wrap: nowrap; 
+    align-items: flex-start; 
+}
+
+/* 2. GÖRSEL GRUBU */
+#sloganlar .image-group {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 50px;
+}
+
+/* 3. METİN/BİLGİ ALANI */
+#sloganlar .product-box-bottom {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: auto; 
+    padding-top: 0; 
+    padding-left: 2rem; 
+}
+
+#sloganlar .box-product-item .image {
+    flex: none; 
+    max-width: 100%; 
+    margin-bottom: 0;
+}
+
+#sloganlar .principles-list {
+    margin-top: 15px;
+    list-style-type: none; 
+    padding-left: 0; 
+}
+
+#sloganlar .principle-item {
+    font-size: 14px;
+    margin-bottom: 60px; 
+    line-height: 1.6;
+    padding-left: 30px;
+    position: relative;
+    color: var(--black-color); 
+}
+
+#sloganlar .principle-item::before {
+    content: "\f00c"; /* Font Awesome tik ikonu */
+    font-family: "Font Awesome 6 Free";
+    color: var(--black-color); 
+    font-weight: 900;
+    display: inline-block;
+    width: 1em;
+    margin-left: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.2em;
+}
+
+#sloganlar .principle-item strong {
+    color: var(--black-color); 
+    font-weight: 700;
+}
+#sloganlar .urun {
+    font-size: 14px;
+    line-height: 1.9rem;
+    color: var(--black-color); 
+    margin-top: 15px;
+    margin-bottom: 50px;
+}
+
+/* SADECE İLKELER LİSTESİ İÇİN ÖZEL STİLLER */
+
+.principles-list {
+    margin-top: 15px;
+    list-style-type: none; 
+    padding-left: 0; 
+}
+
+.principle-item {
+    font-size: 14px;
+    margin-bottom: 48px;
+    line-height: 1.6;
+    padding-left: 10px;
+    position: relative;
+    color: var(--black-color);
+}
+
+.principle-item::before {
+    content: "\f00c"; /* Font Awesome tik ikonu */
+    font-family: "Font Awesome 6 Free";
+    color: var(--black-color);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.2em;
+}
+
+.principle-item strong {
+    color: var(--black-color);
+    font-weight: 700;
 }
 
 /* --- RESPONSIVE TASARIM --- */
