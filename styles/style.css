@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
-
 :root {
   --main-color: #800020;
   --black-color: #fffdd0;
@@ -19,7 +18,7 @@
 
 /*! base html codes  */
 html {
-  font-size: 62.5%;
+  font-size: 55%;
   scroll-padding-top: 9rem;
   scroll-behavior: smooth;
   overflow-x: hidden;
@@ -87,15 +86,15 @@ a {
 /* Yukarı Dön Stilleri */
 #backToTop {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 45px;
-  height: 45px;
+  bottom: 8px;
+  right: 8px;
+  width: 35px;
+  height: 35px;
   border: none;
   border-radius: 50%;
   background-color: transparent;
   color: inherit;
-  font-size: 20px;
+  font-size: 14px;
   cursor: pointer;
   display: none;
   align-items: center;
@@ -105,66 +104,220 @@ a {
   z-index: 1000;
 }
 
-#backToTop:hover {
-  transform: scale(1.1);
+/*! header start  */
+
+/* hamburger menü stili */
+/* =======================================================
+  HEADER GENEL DÜZEN
+   ======================================================= */
+body.no-scroll,
+html.no-scroll {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
+.header {
+  background-color: var(--black-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.3rem 5%;
+  margin: 0;
+  border-radius: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  gap: 1rem;
+}
+
+.header .logo {
+  margin-right: 70px;
+}
+
+.header .logo img {
+  margin-top: 10px;
+  width: 140px;
+  height: 65px;
+}
+
+/* =======================================================
+   HAMBURGER BUTONU
+   ======================================================= */
+#menu-btn {
+  display: block;
+  cursor: pointer;
+  font-size: 2.5rem;
+  color: var(--main-color);
+}
+
+/* =======================================================
+   HAMBURGER MENÜ KAPSAYICISI (MOBİL)
+   ======================================================= */
+.header .navbar {
+  position: absolute;
+  top: 100%;
+  right: -100%;
+  background-color: var(--black-color);
+  height: calc(100vh - 80px);
+  width: 100vw;
+  display: block;
+  transition: right 0.5s ease-out;
+  border: 2px solid var(--main-color);
+  overflow-y: auto;
+}
+
+.header .navbar.active {
+  right: 0;
+}
+
+/* =======================================================
+   MOBİL MENÜ MADDELERİ - SADECE DİREKT LİNKLER
+   ======================================================= */
+.header .navbar > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 2rem;
+  border-bottom: 1px solid var(--main-color);
+  margin: 0;
+  font-size: 2.5rem;
+  color: var(--main-color);
+  text-decoration: none;
+}
+
+/* Direk linklere ok işareti */
+.header .navbar > a::after {
+  content: "\f105";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-left: 0.5rem;
+  color: inherit;
+  font-size: 1.2rem;
+}
+
+/* WhatsApp butonunun oku olmasın */
+.header .navbar .whatsapp-btn::after {
+  content: none;
+}
+
+/* =======================================================
+   DROPDOWN KAPSAYICISI
+   ======================================================= */
+.header .navbar .dropdown {
+  border-bottom: 1px solid var(--main-color);
+}
+
+/* =======================================================
+   DROPDOWN BUTONU (Ürünlerimiz yazısı)
+   ======================================================= */
+.header .navbar .dropdown .dropbtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2rem 2rem;
+  margin: 0;
+  font-size: 2.5rem;
+  color: var(--main-color);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: left;
+}
+
+/* Dropdown butonuna aşağı ok */
+.header .navbar .dropdown .dropbtn::after {
+  content: "\f105";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-left: 0.5rem;
+  color: inherit;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+/* Dropdown açıkken ok aşağı dönsün */
+.header .navbar .dropdown.active .dropbtn::after {
+  transform: rotate(90deg);
+}
+
+/* =======================================================
+  DROPDOWN İÇERİĞİ (Alt Menü)
+   ======================================================= */
+.dropdown-content {
+  background-color: var(--main-color);
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+
+/* Dropdown açıkken görünsün */
+.header .navbar .dropdown.active .dropdown-content {
+  display: block;
+  max-height: 500px; /* Yeterince büyük bir değer */
+}
+
+/* Alt menü linkleri */
+.dropdown-content li {
+  list-style: none;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 1.5rem 2rem;
+  padding-left: 4rem;
+  color: var(--black-color);
+  text-decoration: none;
+  font-size: 2rem;
+  border-bottom: 1px solid var(--black-color);
+  transition: background-color 0.3s ease, padding-left 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: rgba(139, 0, 0, 0.1);
+  padding-left: 4.5rem;
+}
+
+/* Son maddenin altındaki çizgiyi kaldır */
+.dropdown-content li:last-child a {
+  border-bottom: none;
+}
+
+/* Alt menü linklerinin oku olmasın */
+.dropdown-content a::after {
+  content: none;
+}
+
+/* =======================================================
+   TEKLİF ALIN BUTONU
+   ======================================================= */
+.header .navbar .whatsapp-btn {
   background-color: var(--main-color);
   color: var(--black-color);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-}
-
-/*! header start  */
-/* Dropdown menü stili */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropbtn {
-  margin: 0 3rem;
-  font-size: 2.3rem;
-  background-color: transparent;
-  color: var(--main-color);
-  border-bottom: 0.1rem solid transparent;
-  text-decoration: none;
-  transition: transform 0.3s ease-out, color 0.3s linear;
-}
-
-.dropbtn i {
-  margin-left: 0.4rem;
-}
-
-/* Menü içeriği */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  min-width: max-content;
-  background-color: var(--black-color);
-  border-radius: 8px;
-  z-index: 10;
-  list-style-type: none;
+  width: 15rem;
+  border-radius: 5px;
+  border-bottom: none;
+  transform: translateY(0);
+  transition: all 0.2s ease-in;
   text-align: center;
-  left: 0;
-  transform: translateX(-30px);
+  margin-top: 20px;
+  padding: 1rem;
+  margin-left: 2rem;
 }
 
-/* Menüdeki bağlantılar */
-.dropdown-content a {
-  color: var(--main-color);
-  padding: 10px 16px;
-  text-decoration: none;
-  display: block;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
+/* =======================================================
+  ARAMA FORMU
+   ======================================================= */
 .header .search-form {
   position: absolute;
   top: 115%;
   right: 7%;
-  background-color: #fff;
+  background-color: var(--black-color);
   width: 50rem;
   height: 5rem;
   display: flex;
@@ -189,60 +342,12 @@ a {
   width: 100%;
 }
 
-.header {
-  background-color: var(--black-color);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.3rem 5%;
-  margin: 0;
-  border-radius: 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  gap: 1rem;
-}
-
-.header .navbar {
-  display: flex;
-}
-
-.header .navbar a {
-  margin: 0 3rem;
-  font-size: 2.3rem;
-  color: var(--main-color);
-  border-bottom: 0.1rem solid transparent;
-  text-decoration: none;
-  transition: transform 0.3s ease-out, color 0.3s linear;
-  margin-right: 44px;
-}
-
-.header .logo {
-  margin-right: 50px;
-}
-
-.header .logo img {
-  width: 180px;
-  height: 90px;
-}
-
-/* Teklif Alın Butonu */
-.header .navbar .whatsapp-btn {
-  background-color: var(--main-color);
-  color: var(--black-color);
-  padding: 0.3rem 1.5rem;
-  border-radius: 1rem;
-  border-bottom: none;
-  transform: translateY(0);
-  transition: all 0.2s ease-in;
-}
 /*! header end  */
 
 /*! home start  */
 .home {
   position: relative;
-  min-height: 100vh;
-  margin-top: -10.5rem;
+  min-height: 22vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -268,33 +373,36 @@ a {
 
 /*öne çıkan özellikler*/
 .features {
-  padding: 5rem 2rem;
+  padding: 4rem 5%;
   text-align: center;
   background: var(--main-color);
 }
 
 .features-header h2 {
-  font-size: 28px;
+  font-size: 2.5rem;
   color: var(--black-color);
   margin-bottom: 1rem;
+  font-weight: bold;
 }
 
 .features-header p {
   max-width: 60rem;
   margin: 0 auto 3rem;
-  font-size: 16px;
+  font-size: 1.6rem;
   color: var(--black-color);
+  line-height: 1.8;
 }
 
 .features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
+  padding: 0 1rem;
 }
 
 .feature-box {
   background: var(--black-color);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   padding: 2rem;
   transition: transform 0.3s ease;
@@ -302,36 +410,38 @@ a {
 
 .feature-box:hover {
   transform: translateY(-10px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 20px rgba(139, 0, 0, 0.3);
 }
 
 .feature-box i {
-  font-size: 2rem;
+  font-size: 3.5rem;
   color: var(--main-color);
   margin-bottom: 1rem;
 }
 
 .feature-box h3 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
   color: var(--main-color);
 }
 
 .feature-box p {
-  font-size: 14px;
-  color: var(--dark-gray);
+  font-size: 1.5rem;
+  color: var(--main-color);
+  line-height: 1.6;
+  opacity: 0.9;
 }
 
 /*! menu start  */
 .menu {
-  padding: 5rem 2rem;
+  padding: 3rem 5%;
   text-align: center;
   background: var(--black-color);
   color: var(--main-color);
 }
 
 .menu .heading {
-  font-size: 4rem;
+  font-size: 2.8rem;
   font-weight: bold;
   text-align: center;
   margin-bottom: 1rem;
@@ -339,21 +449,24 @@ a {
   border-bottom: 2px solid var(--main-color);
   display: inline-block;
   color: var(--main-color);
+  border-bottom: 3px solid var(--main-color);
 }
 
-.menu p {
-  font-size: 1.4rem;
-  color: var(--dark-gray);
-  max-width: 60rem;
-  margin: 1rem auto 3rem auto;
+.menu > p {
+  font-size: 1.6rem;
+  color: var(--main-color);
+  opacity: 0.9;
+  max-width: 70rem;
+  margin: 1rem auto 4rem auto;
   text-align: center;
-  line-height: 1.6;
+  line-height: 1.8;
 }
 
 .box-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  padding: 0 1rem;
 }
 
 .box {
@@ -374,6 +487,7 @@ a {
   height: 200px;
   object-fit: cover;
   display: block;
+  border-radius: 10px;
 }
 
 .box-head {
@@ -390,9 +504,17 @@ a {
 }
 
 .box-head h3 {
-  font-size: 1.3rem;
+  font-size: 1.9rem;
   color: var(--main-color);
-  margin-top: 0.5rem;
+  margin-top: 2.5rem;
+}
+
+.box-text {
+  font-size: 1.5rem;
+  color: var(--main-color);
+  line-height: 1.6;
+  margin: 1rem 0 1.5rem 0;
+  opacity: 0.95;
 }
 
 .koleksiyon-btn {
@@ -409,10 +531,20 @@ a {
 /*! menu end  */
 
 /*! about start  */
+.about .heading {
+  font-size: 2.8rem;
+  color: var(--black-color);
+  text-align: center;
+  margin-bottom: 3rem;
+  font-weight: bold;
+  border-bottom: 3px solid var(--black-color);
+}
+
 .about .row {
   display: flex;
   flex-wrap: wrap;
-  column-gap: 2rem;
+  gap: 1rem;
+  align-items: center;
 }
 
 .about .row .image {
@@ -421,35 +553,47 @@ a {
 
 .about .row img {
   width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .about .row .content {
   flex: 1 1 45rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .about .row .content h3 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: var(--black-color);
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  text-align: center;
 }
 
 .about .row .content p {
   font-size: 1.6rem;
   color: var(--black-color);
-  padding: 1rem 0;
+  margin-bottom: 1.5rem;
   line-height: 1.8;
+  opacity: 0.9;
+  text-align: center;
 }
 
 .kesfet-btn {
   display: inline-block;
   background-color: var(--black-color);
   color: var(--main-color);
-  padding: 0.8rem 1.6rem;
-  border-radius: 8px;
-  font-size: 1.6rem;
+  padding: 1rem 2.5rem;
+  border-radius: 5px;
+  font-size: 1.5rem;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  margin-top: 1rem;
+  border: 2px solid var(--black-color);
 }
 
 /*! about end  */
@@ -457,71 +601,104 @@ a {
 /*! review start  */
 .review {
   background-color: var(--black-color);
-  padding: 5rem 2rem;
+  padding: 3.5rem 5%;
 }
 
-.review .box-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-  gap: 1.5rem;
-}
-
-.review .box-container .box {
-  border: var(--border);
-  text-align: center;
-  padding: 3rem 2rem;
-  background-color: var(--black-color);
-  border-radius: 3rem;
-  height: fit-content;
-  border: 2px solid var(--main-color);
-}
-
-.review .box-container .box p {
-  font-size: 1.5rem;
-  line-height: 1.8;
-  padding: 2rem 0;
-  color: var(--main-color);
-}
-
-.review .box-container .box h3 {
-  padding: 1rem 0;
-  font-size: 2rem;
-  color: var(--main-color);
-}
 .yorumlar-heading {
   color: var(--main-color);
   text-transform: uppercase;
-  font-size: 4rem;
-  margin-bottom: 3.5rem;
-  border-bottom: 0.1rem solid var(--main-color);
-  margin-left: 8rem;
+  font-size: 2.8rem;
+  margin-bottom: 3rem;
+  border-bottom: 3px solid var(--main-color);
+  padding-bottom: 1rem;
+  text-align: center;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
 
 .yorumlar-heading span {
   color: var(--main-color);
   text-transform: uppercase;
 }
+
+.review .box-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.review .box-container .box {
+  border: 2px solid var(--main-color);
+  text-align: center;
+  padding: 2rem 2.5rem;
+  background-color: var(--black-color);
+  border-radius: 15px;
+  height: fit-content;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.review .box-container .box p {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  padding: 0rem 0 1.5rem 0;
+  color: var(--main-color);
+  font-style: italic;
+  position: relative;
+}
+
+.review .box-container .box h3 {
+  padding-top: 1.5rem;
+  font-size: 1.8rem;
+  color: var(--main-color);
+  font-weight: bold;
+  border-top: 2px solid var(--main-color);
+}
 /*! review end  */
 
 /*! contact start  */
+.contact {
+  padding: 3.5rem 5%;
+}
+
+.contact .heading {
+  font-size: 2.8rem;
+  color: var(--black-color);
+  text-align: center;
+  margin-bottom: 3rem;
+  font-weight: bold;
+  border-bottom: 3px solid var(--black-color);
+}
+
+.contact .heading span {
+  color: var(--black-color);
+}
+
 .contact .row {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  padding: 0 4rem;
+  padding: 0;
 }
 
 .contact .row .map {
   flex: 1 1 45rem;
   width: 100%;
+  height: 400px;
   object-fit: cover;
   margin: 2rem 0;
   border-radius: 1rem;
+  border: 2px solid var(--black-color);
 }
 
 .contact .row form {
   flex: 1 1 45rem;
-  padding: 5rem 2rem;
+  padding: 3rem 2rem;
   text-align: center;
   margin: 2rem 0;
   border-radius: 1rem;
@@ -530,16 +707,19 @@ a {
 
 .contact .row form h3 {
   text-transform: uppercase;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   color: var(--black-color);
+  margin-bottom: 2rem;
+  font-weight: bold;
 }
 
 .contact .row form .inputBox {
   display: flex;
   align-items: center;
   margin: 2rem 0;
-  border: 1px solid var(--black-color);
+  border: 2px solid var(--black-color);
   border-radius: 1rem;
+  background-color: transparent;
 }
 
 .contact .row form .inputBox i {
@@ -550,32 +730,40 @@ a {
 
 .contact .row form .inputBox input {
   width: 100%;
-  padding: 2rem;
-  font-size: 1.7rem;
+  padding: 1.5rem 2rem;
+  font-size: 1.6rem;
   color: var(--black-color);
   text-transform: none;
   background-color: transparent;
+  border: none;
+  outline: none;
 }
 
 .contact .row form .btn {
   color: var(--main-color);
   background-color: var(--black-color);
   font-weight: bold;
+  padding: 1.2rem 3rem;
+  font-size: 1.6rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  border: 2px solid var(--black-color);
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  width: 100%;
 }
 
 .contact .row form .inputBox input::placeholder {
   color: var(--black-color);
-  opacity: 1;
+  opacity: 0.7;
 }
 
 /* Farklı Tarayıcılar İçin Uyumluluk */
 .contact .row form .inputBox input:-ms-input-placeholder {
-  /* IE 10+ */
   color: var(--black-color);
 }
 
 .contact .row form .inputBox input::-ms-input-placeholder {
-  /* Edge */
   color: var(--black-color);
 }
 /*! contact end  */
@@ -583,14 +771,17 @@ a {
 /*! blog start  */
 .blogs {
   background-color: var(--black-color);
+  padding: 3.5rem 5%;
 }
 
 .blogs-heading {
   color: var(--main-color);
   text-transform: uppercase;
-  font-size: 4rem;
-  margin-bottom: 3.5rem;
-  border-bottom: 0.1rem solid var(--main-color);
+  font-size: 2.8rem;
+  margin-bottom: 3rem;
+  border-bottom: 3px solid var(--main-color);
+  padding-bottom: 1rem;
+  text-align: center;
 }
 
 .blogs-heading span {
@@ -601,27 +792,29 @@ a {
 .blogs .box-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-  gap: 1.5rem;
+  gap: 2.5rem;
   align-items: start;
 }
 
 .blogs .box-container .box {
   background-color: var(--main-color);
-  border-radius: 3rem;
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .blogs .box-container .box .image {
   height: 25rem;
   overflow: hidden;
   width: 100%;
-  border-top-left-radius: 3rem;
-  border-top-right-radius: 3rem;
 }
 
 .blogs .box-container .box .image img {
   height: 100%;
   object-fit: cover;
   width: 100%;
+  transition: transform 0.3s ease;
 }
 
 .blogs .box-container .box:hover .image img {
@@ -629,28 +822,37 @@ a {
 }
 
 .blogs .box-container .box .content {
-  padding: 2rem;
+  padding: 2.5rem 2rem;
+  text-align: center;
 }
 
 .blogs .box-container .box .content .title {
   line-height: 1.5;
-  font-size: 2.5rem;
+  font-size: 2rem;
+  color: var(--black-color);
+  text-decoration: none;
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: bold;
 }
 
 .blogs .box-container .box .content span {
   display: block;
   color: var(--black-color);
-  padding-top: 1rem;
-  font-size: 2rem;
+  padding-top: 0.5rem;
+  font-size: 1.4rem;
+  opacity: 0.8;
+  font-style: italic;
 }
 
 .blogs .box-container .box .content p {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   line-height: 1.8;
   color: var(--black-color);
-  padding: 1rem 0;
+  padding: 1.5rem 0;
   max-height: 5.4rem;
   overflow: hidden;
+  transition: max-height 0.3s ease;
 }
 
 .blogs .box-container .box .content p.expanded {
@@ -661,11 +863,14 @@ a {
   display: inline-block;
   background-color: var(--black-color);
   color: var(--main-color);
-  padding: 0.8rem 2rem;
+  padding: 1rem 2.5rem;
   margin-top: 1rem;
-  font-size: 1.6rem;
-  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  border-radius: 1rem;
   transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  font-weight: 600;
+  border: 2px solid var(--main-color);
 }
 /*! blog end  */
 
@@ -673,7 +878,7 @@ a {
 .footer {
   background-color: var(--main-color);
   text-align: center;
-  padding: 1rem 0;
+  padding: 2rem 5%;
 }
 
 /* .footer .share {
@@ -696,54 +901,643 @@ a {
 } */
 
 .footer .credit {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: var(--black-color);
-  font-weight: 300;
-  padding-top: 1.5rem;
+  font-weight: 400;
+  padding-top: 1rem;
+  line-height: 1.6;
 }
 
 .footer .credit span {
   color: var(--black-color);
+  font-weight: 500;
 }
 /*! footer end  */
 
-/*! responsive start  */
-@media (max-width: 768px) {
-  .header #menu-btn {
-    display: inline-block;
+/* Tablet Stilleri */
+@media (min-width: 768px) and (max-width: 1023px) {
+  html {
+    font-size: 60%;
   }
 
+  section {
+    padding: 5rem 7%;
+  }
+
+  /* ===== HEADER - YATAY MENÜ ===== */
+  .header {
+    background-color: var(--black-color);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0rem 0%;
+    margin: 0;
+    border-radius: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .header .logo {
+    margin-right: 0;
+  }
+
+  .header .logo img {
+    width: 150px;
+    height: 75px;
+  }
+
+  /* Hamburger butonunu gizle */
+  #menu-btn {
+    display: none;
+  }
+
+  /* Navbar'ı yatay yap */
   .header .navbar {
+    position: static;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+    gap: clamp(0.8rem, 2vw, 2.5rem);
+    border: none;
+    overflow: visible;
+    background: transparent;
+    margin-top: 15px;
+    padding: 0 1rem;
+  }
+  .header .navbar > a {
+    padding: 0.8rem clamp(0.5rem, 1vw, 1.2rem);
+    border: none;
+    font-size: clamp(1.8rem, 2.2vw, 2.5rem);
+    white-space: nowrap;
+  }
+
+  .header .navbar > a::after {
+    content: none;
+  }
+
+  /* Dropdown (Ürünlerimiz) */
+  .header .navbar .dropdown {
+    position: relative;
+    border: none;
+  }
+
+  .header .navbar .dropdown .dropbtn {
+    padding: 0.8rem clamp(0.5rem, 1vw, 1.2rem);
+    font-size: clamp(1.8rem, 2.2vw, 2.5rem);
+  }
+
+  .header .navbar .dropdown .dropbtn::after {
+    content: "\f107";
+    transform: none;
+  }
+
+  .header .navbar .dropdown.active .dropbtn::after {
+    transform: rotate(180deg);
+  }
+
+  /* Dropdown içeriği */
+  .dropdown-content {
     position: absolute;
-    top: 95%;
-    background-color: #fff;
-    height: calc(100vh - 9rem);
-    width: 30rem;
-    box-shadow: 0px 20px 14px 0px rgb(0 0 0 / 75%);
-    right: -100%;
+    min-width: 134px;
+    top: 6.2rem;
+    left: 0;
+    border: 2px solid var(--main-color);
+    z-index: 100;
+    border: none;
+    text-align: center;
   }
 
-  .header .navbar.active {
-    right: 3rem;
+  .dropdown-content a {
+    padding: 1.2rem 2rem;
+    font-size: 1.5rem;
   }
 
-  .header .navbar a {
-    color: var(--black-color);
-    display: block;
-    margin: 1.5rem;
-    padding: 0.5rem;
+  .dropdown-content a:hover {
+    padding-left: 2rem;
+  }
+
+  /* WhatsApp butonu */
+  .header .navbar .whatsapp-btn {
+    margin: 0;
+    margin-left: auto;
+    width: auto;
+    padding: clamp(0.5rem, 1vw, 1rem) clamp(1rem, 1.5vw, 2rem);
+    font-size: clamp(1.4rem, 1.8vw, 1.8rem);
+    flex-shrink: 0;
+  }
+
+  .header .navbar .whatsapp-btn::after {
+    content: none;
+  }
+
+  /* ===== HOME ===== */
+  .home {
+    min-height: 36vh;
+  }
+
+  /* ===== ÖNE ÇIKAN ÖZELLİKLER ===== */
+  .features {
+    padding: 5rem 7%;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+
+  .features-header h2 {
+    font-size: 3rem;
+  }
+
+  .features-header p {
+    font-size: 1.8rem;
+  }
+
+  /* ===== MENÜ (Koleksiyonlar) ===== */
+  .menu {
+    padding: 5rem 7%;
+  }
+
+  .menu .heading {
+    font-size: 3.5rem;
+  }
+
+  .menu > p {
+    font-size: 1.8rem;
+  }
+
+  .box-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+
+  .box-head img {
+    height: 250px;
+  }
+
+  /* ===== HAKKIMIZDA ===== */
+  .about {
+    padding: 5rem 7%;
+  }
+
+  .about .heading {
+    font-size: 3.5rem;
+  }
+
+  .about .row .content h3 {
+    font-size: 3rem;
+  }
+
+  .about .row .content p {
+    font-size: 1.8rem;
+  }
+
+  /* ===== YORUMLAR ===== */
+  .review {
+    padding: 5rem 7%;
+  }
+
+  .yorumlar-heading {
+    font-size: 3.5rem;
+  }
+
+  .review .box-container .box {
+    padding: 3rem 3rem;
+  }
+
+  .review .box-container .box p {
+    font-size: 1.7rem;
+  }
+
+  .review .box-container .box h3 {
     font-size: 2rem;
   }
+
+  /* ===== İLETİŞİM ===== */
+  .contact {
+    padding: 5rem 7%;
+  }
+
+  .contact .heading {
+    font-size: 3.5rem;
+  }
+
+  .contact .row .map {
+    height: 450px;
+  }
+
+  .contact .row form h3 {
+    font-size: 3rem;
+  }
+
+  .contact .row form .inputBox input {
+    font-size: 1.8rem;
+  }
+
+  .contact .row form .btn {
+    font-size: 1.7rem;
+    width: 34%;
+  }
+
+  /* ===== BLOG ===== */
+  .blogs {
+    padding: 5rem 7%;
+  }
+
+  .blogs-heading {
+    font-size: 3.5rem;
+  }
+
+  .blogs .box-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+
+  .blogs .box-container .box .content .title {
+    font-size: 2.2rem;
+  }
+
+  .blogs .box-container .box .content span {
+    font-size: 1.7rem;
+  }
+
+  .blogs .box-container .box .content p {
+    font-size: 2rem;
+  }
+
+  .blogs .box-container .box .content p.expanded {
+    max-height: none;
+    overflow: visible;
+  }
+
+  .blogs .box-container .box.expanded {
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    padding: 2.5rem 7%;
+  }
+
+  .footer .credit {
+    font-size: 1.7rem;
+  }
+
+  /* ===== YUKARI DÖN BUTONU ===== */
+  #backToTop {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    bottom: 15px;
+    right: 5px;
+  }
 }
 
-@media (max-width: 576px) {
+/* ============================================
+   DESKTOP: 1024px ve üzeri
+   ============================================ */
+@media (min-width: 1024px) {
+  /* Genel Ayarlar */
   html {
-    font-size: 50%;
+    font-size: clamp(50%, 0.6vw, 62.5%);
   }
 
-  .header .search-form {
-    width: 30rem;
+  section {
+    padding: 7rem 10%;
   }
+
+  /* ===== HEADER - YATAY MENÜ ===== */
+  .header {
+    background-color: var(--black-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: clamp(70px, 8vw, 90px);
+    overflow: visible;
+  }
+
+  .header .logo {
+    margin-right: 0;
+    flex-shrink: 0;
+  }
+
+  .header .logo img {
+    width: 180px;
+    height: 85px;
+  }
+
+  /* Hamburger butonunu gizle */
+  #menu-btn {
+    display: none;
+  }
+
+  /* Navbar'ı yatay yap */
+  .header .navbar {
+    position: static;
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+    gap: clamp(2rem, 3vw, 4rem);
+    border: none;
+    overflow: visible;
+    background: transparent;
+    margin: 0 0 0 2rem;
+    padding: 0 1rem;
+  }
+
+  .header .navbar > a {
+    padding: 1rem clamp(1rem, 1.5vw, 2rem);
+    border: none;
+    font-size: clamp(1.8rem, 2vw, 2.5rem);
+    white-space: nowrap;
+    transition: color 0.3s ease;
+  }
+
+  .header .navbar > a:hover {
+    color: var(--main-color);
+    opacity: 0.8;
+  }
+
+  .header .navbar > a::after {
+    content: none;
+  }
+
+  /* Dropdown (Ürünlerimiz) */
+  .header .navbar .dropdown {
+    position: relative;
+    border: none;
+  }
+
+  .header .navbar .dropdown > a:hover {
+    color: var(--main-color);
+    opacity: 0.8;
+  }
+
+  .header .navbar .dropdown .dropbtn {
+    padding: 1rem clamp(1rem, 1.5vw, 2rem);
+    font-size: clamp(1.8rem, 2vw, 2.5rem);
+  }
+
+  .header .navbar .dropdown .dropbtn::after {
+    content: "\f107";
+    transform: none;
+  }
+
+  .header .navbar .dropdown.active .dropbtn::after {
+    transform: rotate(180deg);
+  }
+
+  /* HOME - Video */
+  .home {
+    min-height: clamp(60vh, 70vw, 85vh);
+  }
+
+  /* Dropdown içeriği */
+  .dropdown-content {
+    position: absolute;
+    background: var(--main-color);
+    min-width: 200px;
+    top: 100%;
+    left: 0;
+    border-radius: 10px;
+    z-index: 100;
+    text-align: left;
+    margin-top: 0.5rem;
+  }
+
+  .dropdown-content a {
+    padding: 1.2rem 2rem;
+    font-size: clamp(1.6rem, 1.8vw, 2rem);
+  }
+
+  .dropdown-content a:hover {
+    padding-left: 2rem;
+  }
+
+  /* WhatsApp butonu */
+  .header .navbar .whatsapp-btn {
+    margin: 0;
+    margin-left: auto;
+    margin-right: 0;
+    width: auto;
+    padding: clamp(0.8rem, 1vw, 1.2rem) clamp(1.5rem, 2vw, 2.5rem);
+    font-size: clamp(1.6rem, 1.8vw, 2rem);
+    white-space: nowrap;
+  }
+
+  .header .navbar .whatsapp-btn::after {
+    content: none;
+  }
+  /* ===== ÖNE ÇIKAN ÖZELLİKLER ===== */
+  .features {
+    padding: 7rem 10%;
+  }
+
+  .features-header h2 {
+    font-size: clamp(2rem, 5vw, 5rem);
+  }
+
+  .features-header p {
+    font-size: clamp(1rem, 1vw, 2.5rem);
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+
+  .feature-box h3 {
+    font-size: clamp(2rem, 2vw, 2rem);
+  }
+
+  .feature-box p {
+    font-size: clamp(1rem, 1vw, 2rem);
+  }
+
+  /* ===== MENÜ (Koleksiyonlar) ===== */
+  .menu {
+    padding: 7rem 10%;
+  }
+
+  .menu .heading {
+    font-size: clamp(2rem, 5vw, 4rem);
+    display: block;
+  }
+
+  .menu > p {
+    font-size: clamp(1.8rem, 2vw, 1.8rem);
+  }
+
+  .box-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+  }
+
+  .menu-category {
+    font-size: clamp(1.2rem, 1.4vw, 1.8rem);
+  }
+
+  .box-head h3 {
+    font-size: clamp(2rem, 2.2vw, 2rem);
+  }
+
+  .box-text {
+    font-size: clamp(1.6rem, 1.8vw, 1rem);
+  }
+
+  .koleksiyon-btn {
+    font-size: clamp(1.6rem, 1.8vw, 0.5rem);
+    padding: clamp(0.8rem, 1vw, 1.2rem) clamp(2rem, 2.5vw, 3rem);
+  }
+
+  /* ===== HAKKIMIZDA ===== */
+  .about {
+    padding: 7rem 10%;
+  }
+
+  .about .heading {
+    font-size: clamp(2rem, 5vw, 4rem);
+    display: block;
+  }
+
+  .about .row .content h3 {
+    font-size: clamp(3rem, 3vw, 3rem);
+    text-align: left;
+  }
+
+  .about .row .content p {
+    font-size: clamp(1.5rem, 1vw, 1rem);
+    text-align: left;
+  }
+
+  .about .row .content p::before {
+    content: "✔";
+    color: var(--black-color);
+    margin-right: 1rem;
+    font-weight: bold;
+  }
+
+  .kesfet-btn {
+    font-size: clamp(1rem, 1vw, 1.5rem);
+    padding: clamp(1rem, 1vw, 1rem) clamp(2.5rem, 3vw, 3.5rem);
+  }
+
+  /* ===== YORUMLAR ===== */
+  .review {
+    padding: 7rem 10%;
+  }
+
+  .yorumlar-heading {
+    font-size: clamp(2rem, 5vw, 5rem);
+    display: block;
+  }
+
+.review .box-container {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    max-width: none;
 }
 
-/*! responsive end  */
+  .review .box-container .box {
+    flex: 1; 
+    padding: 3.5rem 3rem;
+}
+
+.review .box-container .box p {
+    font-size: clamp(1.6rem, 1.8vw, 2rem);
+}
+
+.review .box-container .box h3 {
+    font-size: clamp(2rem, 2.2vw, 2rem);
+}
+
+  /* ===== İLETİŞİM ===== */
+  .contact {
+    padding: 7rem 10%;
+  }
+
+  .contact .heading {
+    font-size: clamp(2rem, 5vw, 5rem);
+    display: block;
+  }
+
+  .contact .row .map {
+    height: 500px;
+  }
+
+  .contact .row form h3 {
+    font-size: clamp(2rem, 2.2vw, 3rem);
+  }
+
+  .contact .row form .inputBox input {
+    font-size: clamp(1.8rem, 2vw, 2rem);
+  }
+
+  .contact .row form .btn {
+    font-size: clamp(1rem, 1vw, 1.5rem);
+    padding: clamp(1rem, 1vw, 1rem) clamp(2.5rem, 3vw, 3.5rem);
+    width: 50%;
+    margin-top: 7%;
+  }
+
+  /* ===== BLOG ===== */
+  .blogs {
+    padding: 7rem 10%;
+  }
+
+  .blogs-heading {
+    font-size: clamp(2rem, 5vw, 5rem);
+    display: block;
+  }
+
+  .blogs .box-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+
+  .blogs .box-container .box .content .title {
+    font-size: clamp(2.2rem, 2.5vw, 2rem);
+  }
+
+  .blogs .box-container .box .content span {
+    font-size: clamp(1.4rem, 1.6vw, 1.5rem);
+  }
+
+  .blogs .box-container .box .content p {
+    font-size: clamp(1.6rem, 1.8vw, 2rem);
+  }
+
+  .blog-btn {
+    font-size: clamp(1rem, 1vw, 1.5rem);
+    padding: clamp(1rem, 1vw, 1rem) clamp(2.5rem, 3vw, 3.5rem);
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    padding: 3rem 10%;
+  }
+
+  .footer .credit {
+    font-size: clamp(1.8rem, 2vw, 2rem);
+  }
+
+  /* ===== YUKARI DÖN BUTONU ===== */
+  #backToTop {
+    width: 55px;
+    height: 55px;
+    font-size: 20px;
+    bottom: 20px;
+    right: 20px;
+  }
+}
