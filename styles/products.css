@@ -147,35 +147,35 @@
 /* YALNIZCA #Hakkımızda STİLLERİ*/
 /* ======================================================= */
 #Hakkımızda .box-product-item {
-    display: flex; 
-    flex-wrap: nowrap; 
-    align-items: flex-start; 
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
 }
 
 /* 2. GÖRSEL GRUBU */
 #Hakkımızda .image-group {
-    flex: 1 1 50%;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    margin-top: 50px;
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 50px;
 }
 
 /* 3. METİN/BİLGİ ALANI */
 #Hakkımızda .product-box-bottom {
-    flex: 1 1 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    min-height: auto; 
-    padding-top: 0; 
-    padding-left: 2rem; 
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: auto;
+  padding-top: 0;
+  padding-left: 2rem;
 }
 
 #Hakkımızda .box-product-item .image {
-    flex: none; 
-    max-width: 100%; 
-    margin-bottom: 0;
+  flex: none;
+  max-width: 100%;
+  margin-bottom: 0;
 }
 
 /* ======================================================= */
@@ -183,69 +183,69 @@
 /* ======================================================= */
 
 #Vizyon .box-product-item {
-    display: flex; 
-    flex-wrap: nowrap; 
-    align-items: flex-start; 
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
 }
 
 /* 2. GÖRSEL GRUBU */
 #Vizyon .image-group {
-    flex: 1 1 50%;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    margin-top: 50px;
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 50px;
 }
 
 /* 3. METİN/BİLGİ ALANI */
 #Vizyon .product-box-bottom {
-    flex: 1 1 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    min-height: auto; 
-    padding-top: 0; 
-    padding-left: 2rem; 
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: auto;
+  padding-top: 0;
+  padding-left: 2rem;
 }
 
 #Vizyon .box-product-item .image {
-    flex: none; 
-    max-width: 100%; 
-    margin-bottom: 0;
+  flex: none;
+  max-width: 100%;
+  margin-bottom: 0;
 }
 
 #Vizyon .principles-list {
-    margin-top: 15px;
-    list-style-type: none; 
-    padding-left: 0; 
+  margin-top: 15px;
+  list-style-type: none;
+  padding-left: 0;
 }
 
 #Vizyon .principle-item {
-    font-size: 14px;
-    margin-bottom: 27px; 
-    line-height: 1.6;
-    padding-left: 30px;
-    position: relative;
-    color: var(--main-color); 
+  font-size: 14px;
+  margin-bottom: 27px;
+  line-height: 1.6;
+  padding-left: 30px;
+  position: relative;
+  color: var(--main-color);
 }
 
 #Vizyon .principle-item::before {
-    content: "\f00c"; /* Font Awesome tik ikonu */
-    font-family: "Font Awesome 6 Free";
-    color: var(--main-color); 
-    font-weight: 900;
-    display: inline-block;
-    width: 1em;
-    margin-left: 0;
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-size: 1.2em;
+  content: "\f00c"; /* Font Awesome tik ikonu */
+  font-family: "Font Awesome 6 Free";
+  color: var(--main-color);
+  font-weight: 900;
+  display: inline-block;
+  width: 1em;
+  margin-left: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.2em;
 }
 
 #Vizyon .principle-item strong {
-    color: var(--main-color); 
-    font-weight: 700;
+  color: var(--main-color);
+  font-weight: 700;
 }
 
 /* ======================================================= */
@@ -253,69 +253,69 @@
 /* ======================================================= */
 
 #misyon .box-product-item {
-    display: flex; 
-    flex-wrap: nowrap; 
-    align-items: flex-start; 
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
 }
 
 /* 2. GÖRSEL GRUBU */
 #misyon .image-group {
-    flex: 1 1 50%;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    margin-top: 50px;
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 50px;
 }
 
 /* 3. METİN/BİLGİ ALANI */
 #misyon .product-box-bottom {
-    flex: 1 1 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    min-height: auto; 
-    padding-top: 0; 
-    padding-left: 2rem; 
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: auto;
+  padding-top: 0;
+  padding-left: 2rem;
 }
 
 #misyon .box-product-item .image {
-    flex: none; 
-    max-width: 100%; 
-    margin-bottom: 0;
+  flex: none;
+  max-width: 100%;
+  margin-bottom: 0;
 }
 
 #misyon .principles-list {
-    margin-top: 15px;
-    list-style-type: none; 
-    padding-left: 0; 
+  margin-top: 15px;
+  list-style-type: none;
+  padding-left: 0;
 }
 
 #misyon .principle-item {
-    font-size: 14px;
-    margin-bottom: 40px; 
-    line-height: 1.6;
-    padding-left: 30px;
-    position: relative;
-    color: var(--black-color); 
+  font-size: 14px;
+  margin-bottom: 40px;
+  line-height: 1.6;
+  padding-left: 30px;
+  position: relative;
+  color: var(--black-color);
 }
 
 #misyon .principle-item::before {
-    content: "\f00c"; /* Font Awesome tik ikonu */
-    font-family: "Font Awesome 6 Free";
-    color: var(--black-color); 
-    font-weight: 900;
-    display: inline-block;
-    width: 1em;
-    margin-left: 0;
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-size: 1.2em;
+  content: "\f00c"; /* Font Awesome tik ikonu */
+  font-family: "Font Awesome 6 Free";
+  color: var(--black-color);
+  font-weight: 900;
+  display: inline-block;
+  width: 1em;
+  margin-left: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.2em;
 }
 
 #misyon .principle-item strong {
-    color: var(--black-color); 
-    font-weight: 700;
+  color: var(--black-color);
+  font-weight: 700;
 }
 
 /* ======================================================= */
@@ -323,75 +323,75 @@
 /* ======================================================= */
 
 #urun-konseptleri .box-product-item {
-    display: flex; 
-    flex-wrap: nowrap; 
-    align-items: flex-start; 
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
 }
 
 /* 2. GÖRSEL GRUBU */
 #urun-konseptleri .image-group {
-    flex: 1 1 50%;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    margin-top: 50px;
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 50px;
 }
 
 /* 3. METİN/BİLGİ ALANI */
 #urun-konseptleri .product-box-bottom {
-    flex: 1 1 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    min-height: auto; 
-    padding-top: 0; 
-    padding-left: 2rem; 
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: auto;
+  padding-top: 0;
+  padding-left: 2rem;
 }
 
 #urun-konseptleri .box-product-item .image {
-    flex: none; 
-    max-width: 100%; 
-    margin-bottom: 0;
+  flex: none;
+  max-width: 100%;
+  margin-bottom: 0;
 }
 
 #urun-konseptleri .principles-list {
-    margin-top: 15px;
-    list-style-type: none; 
-    padding-left: 0; 
+  margin-top: 15px;
+  list-style-type: none;
+  padding-left: 0;
 }
 
 #urun-konseptleri .principle-item {
-    font-size: 14px;
-    margin-bottom: 30px; 
-    line-height: 1.6;
-    padding-left: 30px;
-    position: relative;
-    color: var(--main-color); 
+  font-size: 14px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  padding-left: 30px;
+  position: relative;
+  color: var(--main-color);
 }
 
 #urun-konseptleri .principle-item::before {
-    content: "\f00c"; /* Font Awesome tik ikonu */
-    font-family: "Font Awesome 6 Free";
-    color: var(--main-color); 
-    font-weight: 900;
-    display: inline-block;
-    width: 1em;
-    margin-left: 0;
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-size: 1.2em;
+  content: "\f00c"; /* Font Awesome tik ikonu */
+  font-family: "Font Awesome 6 Free";
+  color: var(--main-color);
+  font-weight: 900;
+  display: inline-block;
+  width: 1em;
+  margin-left: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.2em;
 }
 
 #urun-konseptleri .principle-item strong {
-    color: var(--main-color); 
-    font-weight: 700;
+  color: var(--main-color);
+  font-weight: 700;
 }
 .urun {
-    font-size: 14px;
-    line-height: 1.9rem;
-    color: var(--main-color); 
-    margin-top: 15px;
+  font-size: 14px;
+  line-height: 1.9rem;
+  color: var(--main-color);
+  margin-top: 15px;
 }
 
 /* ======================================================= */
@@ -399,124 +399,171 @@
 /* ======================================================= */
 
 #sloganlar .box-product-item {
-    display: flex; 
-    flex-wrap: nowrap; 
-    align-items: flex-start; 
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
 }
 
 /* 2. GÖRSEL GRUBU */
 #sloganlar .image-group {
-    flex: 1 1 50%;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    margin-top: 50px;
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 50px;
 }
 
 /* 3. METİN/BİLGİ ALANI */
 #sloganlar .product-box-bottom {
-    flex: 1 1 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    min-height: auto; 
-    padding-top: 0; 
-    padding-left: 2rem; 
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: auto;
+  padding-top: 0;
+  padding-left: 2rem;
 }
 
 #sloganlar .box-product-item .image {
-    flex: none; 
-    max-width: 100%; 
-    margin-bottom: 0;
+  flex: none;
+  max-width: 100%;
+  margin-bottom: 0;
 }
 
 #sloganlar .principles-list {
-    margin-top: 15px;
-    list-style-type: none; 
-    padding-left: 0; 
+  margin-top: 15px;
+  list-style-type: none;
+  padding-left: 0;
 }
 
 #sloganlar .principle-item {
-    font-size: 14px;
-    margin-bottom: 60px; 
-    line-height: 1.6;
-    padding-left: 30px;
-    position: relative;
-    color: var(--black-color); 
+  font-size: 14px;
+  margin-bottom: 60px;
+  line-height: 1.6;
+  padding-left: 30px;
+  position: relative;
+  color: var(--black-color);
 }
 
 #sloganlar .principle-item::before {
-    content: "\f00c"; /* Font Awesome tik ikonu */
-    font-family: "Font Awesome 6 Free";
-    color: var(--black-color); 
-    font-weight: 900;
-    display: inline-block;
-    width: 1em;
-    margin-left: 0;
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-size: 1.2em;
+  content: "\f00c"; /* Font Awesome tik ikonu */
+  font-family: "Font Awesome 6 Free";
+  color: var(--black-color);
+  font-weight: 900;
+  display: inline-block;
+  width: 1em;
+  margin-left: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.2em;
 }
 
 #sloganlar .principle-item strong {
-    color: var(--black-color); 
-    font-weight: 700;
+  color: var(--black-color);
+  font-weight: 700;
 }
 #sloganlar .urun {
-    font-size: 14px;
-    line-height: 1.9rem;
-    color: var(--black-color); 
-    margin-top: 15px;
-    margin-bottom: 50px;
+  font-size: 14px;
+  line-height: 1.9rem;
+  color: var(--black-color);
+  margin-top: 15px;
+  margin-bottom: 50px;
 }
 
 /* SADECE İLKELER LİSTESİ İÇİN ÖZEL STİLLER */
 
 .principles-list {
-    margin-top: 15px;
-    list-style-type: none; 
-    padding-left: 0; 
+  margin-top: 15px;
+  list-style-type: none;
+  padding-left: 0;
 }
 
 .principle-item {
-    font-size: 14px;
-    margin-bottom: 48px;
-    line-height: 1.6;
-    padding-left: 10px;
-    position: relative;
-    color: var(--black-color);
+  font-size: 14px;
+  margin-bottom: 48px;
+  line-height: 1.6;
+  padding-left: 10px;
+  position: relative;
+  color: var(--black-color);
 }
 
 .principle-item::before {
-    content: "\f00c"; /* Font Awesome tik ikonu */
-    font-family: "Font Awesome 6 Free";
-    color: var(--black-color);
-    font-weight: bold;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-size: 1.2em;
+  content: "\f00c"; /* Font Awesome tik ikonu */
+  font-family: "Font Awesome 6 Free";
+  color: var(--black-color);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.2em;
 }
 
 .principle-item strong {
-    color: var(--black-color);
-    font-weight: 700;
+  color: var(--black-color);
+  font-weight: 700;
 }
 
 /* --- RESPONSIVE TASARIM --- */
-@media (max-width: 991px) {
-  /* Tabletlerde ve küçük ekranlarda */
-  .product-box-container {
-    max-width: 90%;
-  }
-}
 
 @media (max-width: 768px) {
-  /* Mobil cihazlarda resmi ve metni alt alta getir */
+  body.no-scroll,
+  html.no-scroll {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+  }
+
+  .header {
+    background-color: var(--black-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.3rem 5%;
+    margin: 0;
+    border-radius: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    gap: 1rem;
+  }
+
+  .header .logo {
+    margin-right: 70px;
+  }
+
+  .header .logo img {
+    margin-top: 10px;
+    width: 140px;
+    height: 65px;
+  }
+  #menu-btn {
+    display: block;
+    cursor: pointer;
+    font-size: 2.5rem;
+    color: var(--main-color);
+  }
+
+  .header .navbar {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: var(--black-color);
+    height: calc(100vh - 80px);
+    width: 100vw;
+    display: block;
+    transition: right 0.5s ease-out;
+    border: 2px solid var(--main-color);
+    overflow-y: auto;
+  }
+
+  .header .navbar.active {
+    right: 0;
+  }
+
   .box-product-item {
     flex-direction: column;
     text-align: center;
@@ -528,5 +575,18 @@
   }
   .product-info-btn {
     align-self: center;
+  }
+  /* BAŞLIK STİLİ */
+  .products-header {
+    font-size: 4rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    margin-left: 50px;
+    background-color: var(--black-color);
+    color: var(--main-color);
+    width: calc(90vw - 100px);
+    border-radius: 1.8rem;
   }
 }
