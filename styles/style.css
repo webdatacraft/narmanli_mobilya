@@ -259,7 +259,7 @@ html.no-scroll {
 /* Dropdown açıkken görünsün */
 .header .navbar .dropdown.active .dropdown-content {
   display: block;
-  max-height: 500px; /* Yeterince büyük bir değer */
+  max-height: 500px;
 }
 
 /* Alt menü linkleri */
@@ -1012,6 +1012,7 @@ html.no-scroll {
     z-index: 100;
     border: none;
     text-align: center;
+    border-radius: 5px;
   }
 
   .dropdown-content a {
@@ -1311,7 +1312,7 @@ html.no-scroll {
     min-width: 200px;
     top: 100%;
     left: 0;
-    border-radius: 10px;
+    border-radius: 5px;
     z-index: 100;
     text-align: left;
     margin-top: 0.5rem;
