@@ -383,44 +383,65 @@ html.no-scroll {
   }
 
   .box-product-item {
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
     padding: 4rem 0;
-    text-align: left;
+    text-align: center;
   }
 
-  .box-product-item .image {
-    flex: 1 1 50%;
-    max-width: 50%;
+  .product-box-head {
+    display: none;
   }
 
+  .image-group {
+    flex: none;
+    max-width: 90%;
+  }
+
+  /* Yazı Kapsayıcısı */
   .product-box-bottom {
-    flex: 1 1 50%;
+    flex: none;
     min-height: auto;
     padding-top: 0;
+    max-width: 100%;
   }
+
+  .image-group .image {
+    max-width: 100%;
+  }
+
+  .image-group .second-image {
+    margin-top: 4.5rem;
+}
 
   .product-info-btn {
     align-self: center;
   }
 
   .product-title {
+    text-align: center;
+    font-size: clamp(3.5rem, 3vw, 3.5rem);
+  }
+
+  .product-list {
     text-align: left;
-    font-size: clamp(2.5rem, 3vw, 3.5rem);
   }
 
   .product-list li {
     font-size: 1.6rem;
   }
+  .principle-item {
+  font-size: 2rem;
+}
+.product-credit {
+    font-size: 2rem;
+  }
 
-  /* ÖZEL SECTION'LAR İÇİN RESİM/YAZI YÖNÜ AYARI */
-  #Hakkımızda .box-product-item,
-  #Vizyon .box-product-item,
-  #misyon .box-product-item,
-  #urun-konseptleri .box-product-item,
-  #sloganlar .box-product-item {
-    flex-direction: row;
+  .urun {
+    font-size: 2rem;
+    line-height: 3rem;
   }
 }
 /* =======================================================
@@ -430,6 +451,15 @@ html.no-scroll {
   /* HEADER */
   #menu-btn {
     display: none;
+  }
+
+  .header .logo {
+    margin-right: 0;
+  }
+
+  .header .logo img {
+    width: 200px;
+    height: 100px;
   }
 
   .header .navbar {
@@ -448,7 +478,6 @@ html.no-scroll {
     min-width: 170px;
     top: 7.3rem;
     left: 0;
-    border: 2px solid var(--main-color);
     z-index: 100;
     text-align: center;
   }
@@ -458,7 +487,7 @@ html.no-scroll {
     padding: 1rem 1.5rem;
     color: var(--main-color);
     text-decoration: none;
-    font-size: 1.4rem;
+    font-size: clamp(1.6rem, 1.8vw, 2rem);
     border-bottom: 1px solid var(--main-color);
     transition: background-color 0.3s ease, padding-left 0.3s ease;
   }
@@ -472,6 +501,7 @@ html.no-scroll {
     max-height: 500px;
     background-color: var(--black-color);
     border: 1px solid var(--main-color);
+    top: 7.7rem;
   }
 
   /* PRODUCTS DESKTOP */
@@ -530,106 +560,23 @@ html.no-scroll {
     font-size: 2rem;
   }
 
-  /* ÖZEL SECTION'LAR */
-  #Hakkımızda .box-product-item,
-  #Vizyon .box-product-item,
-  #misyon .box-product-item,
-  #urun-konseptleri .box-product-item,
-  #sloganlar .box-product-item {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: flex-start;
+    .about .heading {
+    font-size: clamp(2rem, 5vw, 4rem);
+    display: block;
   }
 
-  #Hakkımızda .image-group,
-  #Vizyon .image-group,
-  #misyon .image-group,
-  #urun-konseptleri .image-group,
-  #sloganlar .image-group {
-    flex: 1 1 50%;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    margin-top: 50px;
-  }
+ /* HAKKIMIZDA */
 
-  #Hakkımızda .product-box-bottom,
-  #Vizyon .product-box-bottom,
-  #misyon .product-box-bottom,
-  #urun-konseptleri .product-box-bottom,
-  #sloganlar .product-box-bottom {
-    flex: 1 1 50%;
-    min-height: auto;
-    padding-top: 0;
-    padding-left: 2rem;
-  }
-
-  #Hakkımızda .box-product-item .image,
-  #Vizyon .box-product-item .image,
-  #misyon .box-product-item .image,
-  #urun-konseptleri .box-product-item .image,
-  #sloganlar .box-product-item .image {
-    flex: none;
-    max-width: 100%;
-    margin-bottom: 0;
-  }
-
-  /* Vizyon, Misyon, Ürün Konseptleri için özel stiller */
-  #Vizyon .principles-list,
-  #misyon .principles-list,
-  #urun-konseptleri .principles-list,
-  #sloganlar .principles-list {
-    margin-top: 15px;
-    list-style-type: none;
-    padding-left: 0;
-  }
-
-  #Vizyon .principle-item {
-    color: var(--main-color);
-    margin-bottom: 27px;
-  }
-
-  #Vizyon .principle-item::before,
-  #Vizyon .principle-item strong {
-    color: var(--main-color);
-  }
-
-  #misyon .principle-item {
-    color: var(--black-color);
-    margin-bottom: 40px;
-  }
-
-  #misyon .principle-item::before,
-  #misyon .principle-item strong {
-    color: var(--black-color);
-  }
-
-  #urun-konseptleri .principle-item {
-    color: var(--main-color);
+#kurumsal-ilkeler .principles-list .principle-item {
     margin-bottom: 30px;
-  }
+    line-height: 1.6;
+}
 
-  #urun-konseptleri .principle-item::before,
-  #urun-konseptleri .principle-item strong {
-    color: var(--main-color);
-  }
-
-  #sloganlar .principle-item {
-    color: var(--black-color);
-    margin-bottom: 60px;
-  }
-
-  #sloganlar .principle-item::before,
-  #sloganlar .principle-item strong {
-    color: var(--black-color);
-  }
-
-  #sloganlar .urun {
-    color: var(--black-color);
-    margin-bottom: 50px;
-  }
-  
-    /* ===== YUKARI DÖN BUTONU ===== */
+#Vizyon .principles-list .principle-item {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+  /* ===== YUKARI DÖN BUTONU ===== */
   #backToTop {
     width: 40px;
     height: 40px;

@@ -1231,10 +1231,10 @@ html.no-scroll {
   }
 
   .header .logo img {
-    width: 180px;
-    height: 85px;
+    width: 200px;
+    height: 100px;
   }
-
+  
   /* Hamburger butonunu gizle */
   #menu-btn {
     display: none;
@@ -1310,12 +1310,11 @@ html.no-scroll {
     position: absolute;
     background: var(--main-color);
     min-width: 200px;
-    top: 100%;
+    top: 134%;
     left: 0;
     border-radius: 5px;
     z-index: 100;
-    text-align: left;
-    margin-top: 0.5rem;
+    text-align: center;
   }
 
   .dropdown-content a {
@@ -1441,7 +1440,7 @@ html.no-scroll {
   }
 
   .yorumlar-heading {
-    font-size: clamp(2rem, 5vw, 5rem);
+    font-size: clamp(2rem, 5vw, 4rem);
     display: block;
   }
 
@@ -1471,7 +1470,7 @@ html.no-scroll {
   }
 
   .contact .heading {
-    font-size: clamp(2rem, 5vw, 5rem);
+    font-size: clamp(2rem, 5vw, 4rem);
     display: block;
   }
 
@@ -1500,7 +1499,7 @@ html.no-scroll {
   }
 
   .blogs-heading {
-    font-size: clamp(2rem, 5vw, 5rem);
+    font-size: clamp(2rem, 5vw, 4rem);
     display: block;
   }
 
@@ -1535,12 +1534,12 @@ html.no-scroll {
     font-size: clamp(1.8rem, 2vw, 2rem);
   }
 
-  /* ===== YUKARI DÖN BUTONU ===== */
+    /* ===== YUKARI DÖN BUTONU ===== */
   #backToTop {
-    width: 55px;
-    height: 55px;
+    width: 40px;
+    height: 40px;
     font-size: 20px;
-    bottom: 20px;
+    bottom: 10px;
     right: 20px;
   }
 }
